@@ -1,129 +1,222 @@
-"use client";
 
-import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import { useCart } from "@/app/context/CartContext";
 
-const productData = {
-  _id: "honey-100-pure",
-  title: "Perfume",
-  imageUrls: [
-    "/images/pexels-didsss-1830450.jpg",
-    "/images/line 2.jpeg",
-    "/images/13.jpg",
-  ],
-  originalPrice: 1999,
-  price: 1499,
-  discountPercentage: 25,
-  description:
-    "Experience the delicate sweetness of Sufaida (Eucalyptus) Honey. Eucalyptus honey is best known for supporting immunity and providing energy.",
-};
 
-const ProductDetailPage = () => {
-  const [quantity, setQuantity] = useState(1);
+'use client';
+
+import React, { useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import { useCart } from '@/app/context/CartContext';
+import { toast } from 'sonner';
+import {
+  ChevronRight,
+  ChevronLeftCircle,
+  ChevronRightCircle,
+  ShoppingBag,
+  ArrowLeft,
+  ArrowRight,
+} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+
+
+  const products = [
+    // ✅ SCENTS (mixed ladies & gents)
+    { id: 7, name: "Dior", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/Miss Dior.jpeg"], category: "Scents" },
+    { id: 1, name: "Zarar", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Sale", images: ["/images/zaara..jpeg"], category: "Scents" },
+    { id: 9, name: "Gucci Flora", price: 799, originalPrice: Math.round(799 * 1.2), images: ["/images/Gucci Flora.webp"], category: "Scents" },
+    { id: 4, name: "All rounder by Shoaib Malik", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Sale", images: ["/images/all rounder j..jpeg"], category: "Scents" },
+    { id: 11, name: "J. Pen Perfume Set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/PEN.jpeg"], category: "Scents" },
+    { id: 6, name: "Uroosa", price: 2500, originalPrice: Math.round(2500 * 1.2), tag: "Premium", images: ["/images/uroosa.jpeg"], category: "Scents" },
+    { id: 5, name: "Spark", price: 2900, originalPrice: Math.round(2900 * 1.2), tag: "Sale", images: ["/images/Spark2.jpeg"], category: "Scents" },
+    { id: 10, name: "She Pen Perfume set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/she pen.webp"], category: "Scents" },
+    { id: 2, name: "Janan", price: 1900, originalPrice: Math.round(1900 * 1.2), tag: "Sale", images: ["/images/golsz..jpeg"], category: "Scents" },
+    { id: 8, name: "Channel 5 in 1 set", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/channel set.jpg"], category: "Scents" },
+    { id: 3, name: "Exclusive", price: 2599, originalPrice: Math.round(2599 * 1.2), tag: "Sale", images: ["/images/Exclusiv.webp"], category: "Scents" },
+
+    // ✅ WATCHES (standard + luxury + smart watches together)
+    { id: 12, name: "Rich Gold Fancy Watch", price: 1999, originalPrice: Math.round(1999 * 1.2), tag: "Single Piece", images: ["/images/fancy 3.jpeg"], category: "Watches" },
+    { id: 13, name: "Women in Black Aura", price: 1999, originalPrice: Math.round(1999 * 1.2), tag: "Luxury", images: ["/images/6 aura.jpeg"], category: "Watches" },
+    { id: 14, name: "Classic Silver Dial", price: 1999, originalPrice: Math.round(1999 * 1.2), images: ['/images/wt.jpeg'], category: "Watches" },
+    { id: 15, name: "Fancy Neavy Blue Watch", price: 1999, originalPrice: Math.round(1999 * 1.2), images: ["/images/fancy 2.jpeg"], category: "Watches" },
+    { id: 16, name: "Fancy Rose Copper", price: 1599, originalPrice: Math.round(1599 * 1.2), images: ["/images/w5.jpeg"], category: "Watches" },
+    { id: 17, name: "Classic Women", price: 1499, originalPrice: Math.round(1499 * 1.2), images: ["/images/w6.jpeg"], category: "Watches" },
+    { id: 18, name: "Rich Gold", price: 2999, originalPrice: Math.round(2999 * 1.2), tag: "Free Bracelet", images: ["/images/5 bracelet.jpeg"], category: "Watches" },
+    { id: 19, name: "Royal Black Dial", price: 1599, originalPrice: Math.round(1599 * 1.2), tag: "Exclusive", images: ["/images/w4.jpeg"], category: "Watches" },
+    { id: 20, name: "Man in Black Aura", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Limited", images: ["/images/6 aura.jpeg"], category: "Watches" },
+    { id: 21, name: "Platinum Elegance", price: 3299, originalPrice: Math.round(3299 * 1.2), tag: "Best Seller", images: ["/images/w3.jpeg"], category: "Watches" },
+    { id: 22, name: "Elegant Brown", price: 3299, originalPrice: Math.round(3299 * 1.2), tag: "Free Bracelet", images: ["/images/4 bracelet.jpeg"], category: "Watches" },
+    { id: 23, name: "Platinum Black", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Free Chain", images: ["/images/w1.jpeg"], category: "Watches" },
+    { id: 24, name: "Active Pro Watch", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Limited", images: ["/images/smartt.jpeg"], category: "Watches" },
+
+    // ✅ BAGS
+    { id: 36, name: "Elegant Tote Bag", price: 2200, originalPrice: Math.round(2200 * 1.2), tag: "New", images: ["/images/full moon.jpeg"], category: "Bags" },
+    { id: 37, name: "Fancy Clutch", price: 1699, originalPrice: Math.round(1699 * 1.2), tag: "Sale", images: ["/images/black bride.jpeg"], category: "Bags" },
+    { id: 38, name: "Hijab Tote", price: 1800, originalPrice: Math.round(1800 * 1.2), tag: "New", images: ["/images/hijab tote.jpeg"], category: "Bags" },
+    { id: 39, name: "LV Leather Bag", price: 2199, originalPrice: Math.round(2199 * 1.2), tag: "Sale", images: ["/images/lv blac 2.jpeg"], category: "Bags" },
+    { id: 40, name: "Canva Design Tote", price: 1800, originalPrice: Math.round(1800 * 1.2), tag: "New", images: ["/images/CANVA.jpeg"], category: "Bags" },
+    { id: 41, name: "Fancy Gold Clutch", price: 1599, originalPrice: Math.round(1599 * 1.2), tag: "Sale", images: ["/images/ride gold.jpeg"], category: "Bags" },
+    { id: 42, name: "Luna Carry", price: 2999, originalPrice: Math.round(2999 * 1.2), tag: "Sale", images: ["/images/LUNA CARRY BROWN.jpeg"], category: "Bags" },
+    { id: 43, name: "LV Leather Bag", price: 2199, originalPrice: Math.round(2199 * 1.2), tag: "Sale", images: ["/images/lv black off white.jpeg"], category: "Bags" },
+
+    // ✅ STOLES
+    { id: 32, name: 'Chiffon Plain Scarfs', price: 699, originalPrice: Math.round(699 * 1.2), tag: 'Pastels', images: ['/images/3 stols.jpeg'], category: 'Stoles' },
+    { id: 33, name: 'Georgitt Plain Scarfs', price: 2800, originalPrice: Math.round(2800 * 1.2), tag: '6 Pieces Deal', images: ['/images/bundle.jpeg'], category: 'Stoles' },
+    { id: 34, name: 'Silk Stuff Scarf', price: 750, originalPrice: Math.round(750 * 1.2), images: ['/images/silk1.webp'], category: 'Stoles' },
+    { id: 35, name: 'Cotton Stuff Scarfs', price: 799, originalPrice: Math.round(799 * 1.2), images: ['/images/cotton hijab.webp'], category: 'Stoles' },
+  ];
+
+const ProductDetail = () => {
+  const { id } = useParams();
+  const router = useRouter();
+  const currentIndex = products.findIndex(p => p.id.toString() === id);
+  const product = products[currentIndex];
+  const [imageIndex, setImageIndex] = useState(0);
   const { addToCart } = useCart();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const handleAddToCart = () => {
+  if (!product) {
+    return (
+      <div className="text-center py-20 text-xl text-gray-600">
+        Product not found
+      </div>
+    );
+  }
 
-    addToCart({ ...productData, quantity, imgUrl: productData.imageUrls[0] }); // ✅ Pass productData with quantity and imgUrl
-    alert(`${productData.title} (x${quantity}) added to cart!`);
+  const handleNextImage = () => {
+    setImageIndex((prev) => (prev + 1) % product.images.length);
   };
 
-
-  const goToPreviousImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === 0 ? productData.imageUrls.length - 1 : prev - 1
-    );
+  const handlePrevImage = () => {
+    setImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
   };
 
-  // Navigate to next image
-  const goToNextImage = () => {
-    setCurrentImageIndex((prev) =>
-      prev === productData.imageUrls.length - 1 ? 0 : prev + 1
-    );
+  const handleNextProduct = () => {
+    const nextProduct = products[currentIndex + 1];
+    if (nextProduct) {
+      router.push(`/product/${nextProduct.id}`);
+    }
+  };
+
+  const handlePrevProduct = () => {
+    const prevProduct = products[currentIndex - 1];
+    if (prevProduct) {
+      router.push(`/product/${prevProduct.id}`);
+    }
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <div className="flex flex-col md:flex-row gap-8 items-start">
-        {/* Product Image with Arrows */}
-        <div className="w-full md:w-1/2 relative">
-          <button
-            onClick={goToPreviousImage}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 p-1 rounded-full hover:bg-gray-300 z-10"
-          >
+    <div className="bg-white min-h-screen">
+      <Navbar />
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* Breadcrumb */}
+        <div className="flex items-center text-sm text-gray-500 mb-6">
+          <Link href="/allProducts" className="hover:underline">
+            All Products
+          </Link>
+          <ChevronRight size={16} className="mx-2" />
+          <span>{product.name}</span>
+        </div>
 
-            {'<'}
+        {/* Product Navigation Arrows */}
+        <div className="flex justify-between mb-6">
+          <button
+            onClick={handlePrevProduct}
+            disabled={currentIndex === 0}
+            className={`flex items-center gap-2 text-sm px-4 py-2 rounded-full border ${
+              currentIndex === 0 ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
+            }`}
+          >
+            <ArrowLeft size={18} /> Prev Product
           </button>
-          <Image
-            src={productData.imageUrls[currentImageIndex]}
-            alt={`${productData.title} - Image ${currentImageIndex + 1}`}
-            width={400}
-            height={400}
-            className="rounded-lg object-cover"
-          />
-          <button
-            onClick={goToNextImage}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-200 text-gray-800 p-1 rounded-full hover:bg-gray-300 z-10"
-          >
 
-            {'>'}
+          <button
+            onClick={handleNextProduct}
+            disabled={currentIndex === products.length - 1}
+            className={`flex items-center gap-2 text-sm px-4 py-2 rounded-full border ${
+              currentIndex === products.length - 1 ? "opacity-30 cursor-not-allowed" : "hover:bg-gray-100"
+            }`}
+          >
+            Next Product <ArrowRight size={18} />
           </button>
         </div>
 
-        {/* Product Info */}
-        <div className="flex-1">
-          <p className="text-sm text-gray-500 uppercase mb-2">WELLNESS WAVE</p>
-          <h1 className="text-3xl font-bold text-gray-800 mb-3">{productData.title}</h1>
+        <div className="grid md:grid-cols-2 gap-10">
+          {/* Image Gallery */}
+          <div className="relative border rounded-lg overflow-hidden">
+            <Image
+              src={product.images[imageIndex]}
+              alt={product.name}
+              width={600}
+              height={600}
+              className="w-full h-[400px] object-cover"
+            />
 
-          <div className="flex items-center gap-4 mb-2">
-            <p className="text-xl text-gray-500 line-through">
-              Rs.{productData.originalPrice.toLocaleString()} PKR
-            </p>
-            <p className="text-2xl font-semibold text-black">
-              Rs.{productData.price.toLocaleString()} PKR
-            </p>
+            {/* Arrows */}
+            {product.images.length > 1 && (
+              <>
+                <button
+                  onClick={handlePrevImage}
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+                >
+                  <ChevronLeftCircle size={28} />
+                </button>
+
+                <button
+                  onClick={handleNextImage}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100"
+                >
+                  <ChevronRightCircle size={28} />
+                </button>
+              </>
+            )}
           </div>
 
-          <span className="inline-block bg-red-600 text-white px-3 py-1 text-sm font-semibold rounded mb-4">
-            -{productData.discountPercentage}% OFF
-          </span>
+          {/* Info */}
+          <div className="space-y-6">
+            <h1 className="text-3xl font-bold text-gray-900 font-serif">
+              {product.name}
+            </h1>
+            <div className="text-xl font-medium text-[#b13368]">
+              Rs. {product.price.toFixed(0)}{' '}
+              {product.originalPrice && (
+                <span className="line-through text-gray-400 text-base ml-2">
+                  Rs. {product.originalPrice.toFixed(0)}
+                </span>
+              )}
+            </div>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              {product.description}
+            </p>
 
-          {/* Quantity */}
-          <div className="mb-4">
-            <label className="block mb-1 text-sm font-medium text-gray-600">Quantity</label>
-            <div className="flex items-center border rounded w-max px-2">
+            <div className="flex items-center gap-4">
               <button
-                onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="px-3 text-lg"
+                onClick={() => {
+                  addToCart({
+                    _id: product.id.toString(),
+                    title: product.name,
+                    price: product.price,
+                    imgUrl: product.images[0],
+                    quantity: 1,
+                  });
+                  toast.success('Added to cart 🛍️');
+                }}
+                className="inline-flex items-center justify-center gap-2 bg-[#b13368] text-white px-6 py-3 rounded-full hover:bg-[#9b2c5b] transition text-sm"
               >
-                -
+                <ShoppingBag size={18} /> Add to Cart
               </button>
-              <span className="px-4">{quantity}</span>
-              <button
-                onClick={() => setQuantity(quantity + 1)}
-                className="px-3 text-lg"
+
+              <Link
+                href={`https://wa.me/?text=I'm interested in ${product.name}`}
+                className="inline-flex items-center justify-center gap-2 border border-green-600 text-green-700 px-6 py-3 rounded-full hover:bg-green-50 transition text-sm"
               >
-                +
-              </button>
+                WhatsApp
+              </Link>
             </div>
           </div>
-
-          {/* Add to Cart Button */}
-          <button
-            onClick={handleAddToCart}
-            className="w-full bg-blue-500 text-white py-3 rounded-lg text-lg font-semibold hover:bg-blue-600"
-          >
-            Add to Cart
-          </button>
-
-          <p className="text-gray-700 mt-6 leading-relaxed">{productData.description}</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductDetailPage;
+export default ProductDetail;
