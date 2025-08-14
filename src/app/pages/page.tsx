@@ -115,7 +115,7 @@ const SocialLinks = () => {
               <Facebook className="w-6 h-6" />
             </Link>
             <Link
-              href="https://www.instagram.com/be_attractive_with_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
+              href="https://www.instagram.com/attractions_by_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
               target="_blank"
               aria-label="Instagram"
               className="text-pink-500 hover:scale-110 transition"
