@@ -20,51 +20,51 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 
 
-  const products = [
-    // ✅ SCENTS (mixed ladies & gents)
-    { id: 7, name: "Dior", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/Miss Dior.jpeg"], category: "Scents" },
-    { id: 1, name: "Zarar", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Sale", images: ["/images/zaara..jpeg"], category: "Scents" },
-    { id: 9, name: "Gucci Flora", price: 799, originalPrice: Math.round(799 * 1.2), images: ["/images/Gucci Flora.webp"], category: "Scents" },
-    { id: 4, name: "All rounder by Shoaib Malik", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Sale", images: ["/images/all rounder j..jpeg"], category: "Scents" },
-    { id: 11, name: "J. Pen Perfume Set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/PEN.jpeg"], category: "Scents" },
-    { id: 6, name: "Uroosa", price: 2500, originalPrice: Math.round(2500 * 1.2), tag: "Premium", images: ["/images/uroosa.jpeg"], category: "Scents" },
-    { id: 5, name: "Spark", price: 2900, originalPrice: Math.round(2900 * 1.2), tag: "Sale", images: ["/images/Spark2.jpeg"], category: "Scents" },
-    { id: 10, name: "She Pen Perfume set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/she pen.webp"], category: "Scents" },
-    { id: 2, name: "Janan", price: 1900, originalPrice: Math.round(1900 * 1.2), tag: "Sale", images: ["/images/golsz..jpeg"], category: "Scents" },
-    { id: 8, name: "Channel 5 in 1 set", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/channel set.jpg"], category: "Scents" },
-    { id: 3, name: "Exclusive", price: 2599, originalPrice: Math.round(2599 * 1.2), tag: "Sale", images: ["/images/Exclusiv.webp"], category: "Scents" },
+const products = [
+  // ✅ SCENTS (mixed ladies & gents)
+  { id: 7, name: "Dior", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", description: "A luxurious floral scent with modern elegance.", images: ["/images/Miss Dior.jpeg"], category: "Scents" },
+  { id: 1, name: "Zarar", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Sale", description: "A bold fragrance for confident personalities.", images: ["/images/zaara..jpeg"], category: "Scents" },
+  { id: 9, name: "Gucci Flora", price: 799, originalPrice: Math.round(799 * 1.2), description: "A refreshing and floral perfume inspired by nature.", images: ["/images/Gucci Flora.webp"], category: "Scents" },
+  { id: 4, name: "All rounder by Shoaib Malik", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Sale", description: "A versatile scent for every occasion.", images: ["/images/all rounder j..jpeg"], category: "Scents" },
+  { id: 11, name: "J. Pen Perfume Set", price: 999, originalPrice: Math.round(999 * 1.2), description: "Compact and elegant perfumes for on-the-go freshness.", images: ["/images/PEN.jpeg"], category: "Scents" },
+  { id: 6, name: "Uroosa", price: 2500, originalPrice: Math.round(2500 * 1.2), tag: "Premium", description: "A premium scent with a rich, deep aroma.", images: ["/images/uroosa.jpeg"], category: "Scents" },
+  { id: 5, name: "Spark", price: 2900, originalPrice: Math.round(2900 * 1.2), tag: "Sale", description: "An energetic fragrance full of life and spark.", images: ["/images/Spark2.jpeg"], category: "Scents" },
+  { id: 10, name: "She Pen Perfume set", price: 999, originalPrice: Math.round(999 * 1.2), description: "Stylish and portable scents for women.", images: ["/images/she pen.webp"], category: "Scents" },
+  { id: 2, name: "Janan", price: 1900, originalPrice: Math.round(1900 * 1.2), tag: "Sale", description: "A traditional and timeless fragrance.", images: ["/images/golsz..jpeg"], category: "Scents" },
+  { id: 8, name: "Channel 5 in 1 set", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", description: "Five classic scents in one premium package.", images: ["/images/channel set.jpg"], category: "Scents" },
+  { id: 3, name: "Exclusive", price: 2599, originalPrice: Math.round(2599 * 1.2), tag: "Sale", description: "An exclusive scent for special occasions.", images: ["/images/Exclusiv.webp"], category: "Scents" },
 
-    // ✅ WATCHES (standard + luxury + smart watches together)
-    { id: 12, name: "Rich Gold Fancy Watch", price: 1999, originalPrice: Math.round(1999 * 1.2), tag: "Single Piece", images: ["/images/fancy 3.jpeg"], category: "Watches" },
-    { id: 13, name: "Women in Black Aura", price: 1999, originalPrice: Math.round(1999 * 1.2), tag: "Luxury", images: ["/images/6 aura.jpeg"], category: "Watches" },
-    { id: 14, name: "Classic Silver Dial", price: 1999, originalPrice: Math.round(1999 * 1.2), images: ['/images/wt.jpeg'], category: "Watches" },
-    { id: 15, name: "Fancy Neavy Blue Watch", price: 1999, originalPrice: Math.round(1999 * 1.2), images: ["/images/fancy 2.jpeg"], category: "Watches" },
-    { id: 16, name: "Fancy Rose Copper", price: 1599, originalPrice: Math.round(1599 * 1.2), images: ["/images/w5.jpeg"], category: "Watches" },
-    { id: 17, name: "Classic Women", price: 1499, originalPrice: Math.round(1499 * 1.2), images: ["/images/w6.jpeg"], category: "Watches" },
-    { id: 18, name: "Rich Gold", price: 2999, originalPrice: Math.round(2999 * 1.2), tag: "Free Bracelet", images: ["/images/5 bracelet.jpeg"], category: "Watches" },
-    { id: 19, name: "Royal Black Dial", price: 1599, originalPrice: Math.round(1599 * 1.2), tag: "Exclusive", images: ["/images/w4.jpeg"], category: "Watches" },
-    { id: 20, name: "Man in Black Aura", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Limited", images: ["/images/6 aura.jpeg"], category: "Watches" },
-    { id: 21, name: "Platinum Elegance", price: 3299, originalPrice: Math.round(3299 * 1.2), tag: "Best Seller", images: ["/images/w3.jpeg"], category: "Watches" },
-    { id: 22, name: "Elegant Brown", price: 3299, originalPrice: Math.round(3299 * 1.2), tag: "Free Bracelet", images: ["/images/4 bracelet.jpeg"], category: "Watches" },
-    { id: 23, name: "Platinum Black", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Free Chain", images: ["/images/w1.jpeg"], category: "Watches" },
-    { id: 24, name: "Active Pro Watch", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Limited", images: ["/images/smartt.jpeg"], category: "Watches" },
+  // ✅ WATCHES (standard + luxury + smart watches together)
+  { id: 12, name: "Rich Gold Fancy Watch", price: 1999, originalPrice: Math.round(1999 * 1.2), tag: "Single Piece", description: "A gold-tone watch for elegant occasions.", images: ["/images/fancy 3.jpeg"], category: "Watches" },
+  { id: 13, name: "Women in Black Aura", price: 1999, originalPrice: Math.round(1999 * 1.2), tag: "Luxury", description: "A luxurious black dial watch for women.", images: ["/images/6 aura.jpeg"], category: "Watches" },
+  { id: 14, name: "Classic Silver Dial", price: 1999, originalPrice: Math.round(1999 * 1.2), description: "A timeless silver dial watch for everyday wear.", images: ['/images/wt.jpeg'], category: "Watches" },
+  { id: 15, name: "Fancy Neavy Blue Watch", price: 1999, originalPrice: Math.round(1999 * 1.2), description: "A stylish navy blue watch with modern design.", images: ["/images/fancy 2.jpeg"], category: "Watches" },
+  { id: 16, name: "Fancy Rose Copper", price: 1599, originalPrice: Math.round(1599 * 1.2), description: "A rose copper finish watch with unique charm.", images: ["/images/w5.jpeg"], category: "Watches" },
+  { id: 17, name: "Classic Women", price: 1499, originalPrice: Math.round(1499 * 1.2), description: "A classic women's watch for any occasion.", images: ["/images/w6.jpeg"], category: "Watches" },
+  { id: 18, name: "Rich Gold", price: 2999, originalPrice: Math.round(2999 * 1.2), tag: "Free Bracelet", description: "A rich gold watch with matching bracelet.", images: ["/images/5 bracelet.jpeg"], category: "Watches" },
+  { id: 19, name: "Royal Black Dial", price: 1599, originalPrice: Math.round(1599 * 1.2), tag: "Exclusive", description: "A royal black dial watch with premium finish.", images: ["/images/w4.jpeg"], category: "Watches" },
+  { id: 20, name: "Man in Black Aura", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Limited", description: "A limited edition black aura men's watch.", images: ["/images/6 aura.jpeg"], category: "Watches" },
+  { id: 21, name: "Platinum Elegance", price: 3299, originalPrice: Math.round(3299 * 1.2), tag: "Best Seller", description: "A platinum finish watch for elegant wearers.", images: ["/images/w3.jpeg"], category: "Watches" },
+  { id: 22, name: "Elegant Brown", price: 3299, originalPrice: Math.round(3299 * 1.2), tag: "Free Bracelet", description: "An elegant brown watch with bracelet gift.", images: ["/images/4 bracelet.jpeg"], category: "Watches" },
+  { id: 23, name: "Platinum Black", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Free Chain", description: "A platinum black watch with matching chain.", images: ["/images/w1.jpeg"], category: "Watches" },
+  { id: 24, name: "Active Pro Watch", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Limited", description: "A smart active pro watch for fitness lovers.", images: ["/images/smartt.jpeg"], category: "Watches" },
 
-    // ✅ BAGS
-    { id: 36, name: "Elegant Tote Bag", price: 2200, originalPrice: Math.round(2200 * 1.2), tag: "New", images: ["/images/full moon.jpeg"], category: "Bags" },
-    { id: 37, name: "Fancy Clutch", price: 1699, originalPrice: Math.round(1699 * 1.2), tag: "Sale", images: ["/images/black bride.jpeg"], category: "Bags" },
-    { id: 38, name: "Hijab Tote", price: 1800, originalPrice: Math.round(1800 * 1.2), tag: "New", images: ["/images/hijab tote.jpeg"], category: "Bags" },
-    { id: 39, name: "LV Leather Bag", price: 2199, originalPrice: Math.round(2199 * 1.2), tag: "Sale", images: ["/images/lv blac 2.jpeg"], category: "Bags" },
-    { id: 40, name: "Canva Design Tote", price: 1800, originalPrice: Math.round(1800 * 1.2), tag: "New", images: ["/images/CANVA.jpeg"], category: "Bags" },
-    { id: 41, name: "Fancy Gold Clutch", price: 1599, originalPrice: Math.round(1599 * 1.2), tag: "Sale", images: ["/images/ride gold.jpeg"], category: "Bags" },
-    { id: 42, name: "Luna Carry", price: 2999, originalPrice: Math.round(2999 * 1.2), tag: "Sale", images: ["/images/LUNA CARRY BROWN.jpeg"], category: "Bags" },
-    { id: 43, name: "LV Leather Bag", price: 2199, originalPrice: Math.round(2199 * 1.2), tag: "Sale", images: ["/images/lv black off white.jpeg"], category: "Bags" },
+  // ✅ BAGS
+  { id: 36, name: "Elegant Tote Bag", price: 2200, originalPrice: Math.round(2200 * 1.2), tag: "New", description: "A spacious and elegant tote for daily use.", images: ["/images/full moon.jpeg"], category: "Bags" },
+  { id: 37, name: "Fancy Clutch", price: 1699, originalPrice: Math.round(1699 * 1.2), tag: "Sale", description: "A fancy clutch perfect for parties and events.", images: ["/images/black bride.jpeg"], category: "Bags" },
+  { id: 38, name: "Hijab Tote", price: 1800, originalPrice: Math.round(1800 * 1.2), tag: "New", description: "A tote designed to match modest fashion.", images: ["/images/hijab tote.jpeg"], category: "Bags" },
+  { id: 39, name: "LV Leather Bag", price: 2199, originalPrice: Math.round(2199 * 1.2), tag: "Sale", description: "A premium LV leather bag replica.", images: ["/images/lv blac 2.jpeg"], category: "Bags" },
+  { id: 40, name: "Canva Design Tote", price: 1800, originalPrice: Math.round(1800 * 1.2), tag: "New", description: "A stylish tote with unique canva design.", images: ["/images/CANVA.jpeg"], category: "Bags" },
+  { id: 41, name: "Fancy Gold Clutch", price: 1599, originalPrice: Math.round(1599 * 1.2), tag: "Sale", description: "A gold clutch for special celebrations.", images: ["/images/ride gold.jpeg"], category: "Bags" },
+  { id: 42, name: "Luna Carry", price: 2999, originalPrice: Math.round(2999 * 1.2), tag: "Sale", description: "A large carry bag for travel and style.", images: ["/images/LUNA CARRY BROWN.jpeg"], category: "Bags" },
+  { id: 43, name: "LV Leather Bag", price: 2199, originalPrice: Math.round(2199 * 1.2), tag: "Sale", description: "An LV-style leather bag in black/off-white.", images: ["/images/lv black off white.jpeg"], category: "Bags" },
 
-    // ✅ STOLES
-    { id: 32, name: 'Chiffon Plain Scarfs', price: 699, originalPrice: Math.round(699 * 1.2), tag: 'Pastels', images: ['/images/3 stols.jpeg'], category: 'Stoles' },
-    { id: 33, name: 'Georgitt Plain Scarfs', price: 2800, originalPrice: Math.round(2800 * 1.2), tag: '6 Pieces Deal', images: ['/images/bundle.jpeg'], category: 'Stoles' },
-    { id: 34, name: 'Silk Stuff Scarf', price: 750, originalPrice: Math.round(750 * 1.2), images: ['/images/silk1.webp'], category: 'Stoles' },
-    { id: 35, name: 'Cotton Stuff Scarfs', price: 799, originalPrice: Math.round(799 * 1.2), images: ['/images/cotton hijab.webp'], category: 'Stoles' },
-  ];
+  // ✅ STOLES
+  { id: 32, name: 'Chiffon Plain Scarfs', price: 699, originalPrice: Math.round(699 * 1.2), tag: 'Pastels', description: "Soft chiffon scarfs in pastel shades.", images: ['/images/3 stols.jpeg'], category: 'Stoles' },
+  { id: 33, name: 'Georgitt Plain Scarfs', price: 2800, originalPrice: Math.round(2800 * 1.2), tag: '6 Pieces Deal', description: "Plain georgitt scarfs bundle for variety.", images: ['/images/bundle.jpeg'], category: 'Stoles' },
+  { id: 34, name: 'Silk Stuff Scarf', price: 750, originalPrice: Math.round(750 * 1.2), description: "Luxurious silk scarf for formal wear.", images: ['/images/silk1.webp'], category: 'Stoles' },
+  { id: 35, name: 'Cotton Stuff Scarfs', price: 799, originalPrice: Math.round(799 * 1.2), description: "Soft cotton scarfs for casual comfort.", images: ['/images/cotton hijab.webp'], category: 'Stoles' },
+];
 
 const ProductDetail = () => {
   const { id } = useParams();
