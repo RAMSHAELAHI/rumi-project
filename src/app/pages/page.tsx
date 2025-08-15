@@ -76,7 +76,7 @@ const SocialLinks = () => {
               secondaryText="Visit →"
             />
             <SocialButton
-              href="https://www.instagram.com/be_attractive_with_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
+              href="https://www.instagram.com/attractions_by_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
               label="Instagram"
               bgColor="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
               hoverColor="opacity-90"
