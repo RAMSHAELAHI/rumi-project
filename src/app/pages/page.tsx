@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { FaWhatsapp } from 'react-icons/fa';
 import { Instagram, Facebook, Mail } from "lucide-react";
 import { SiTiktok } from "react-icons/si"; // ✅ TikTok logo from react-icons
 import Topbar from "@/components/Topbar"; // ✅ Added Topbar
