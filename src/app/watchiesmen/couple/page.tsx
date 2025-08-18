@@ -29,6 +29,29 @@ const coupleProducts = [
     price: 1999,
     image: '/images/fancy 3.jpeg',
     tag: '1 Piece',
+  }, {
+    id: 4,
+    name: 'Platinum Luxe',
+    price: 1999,
+    images: ['/images/luxury4.jpeg', '/images/luxury6.jpeg'],
+    description:
+      'Couple Watch , A limited-edition platinum watch with a minimalist yet high-class presence.',
+  },
+  {
+    id: 5,
+    name: 'Emerald Elegance',
+    price: 1399,
+    images: ['/images/luxury5.jpeg', '/images/luxury3.jpeg'],
+    description:
+      'Couple Watch, Featuring emerald stones and a slim band — grace meets green brilliance.',
+  },
+  {
+    id: 6,
+    name: 'Royal Pearl',
+    price: 1899,
+    images: ['/images/luxury6.jpeg', '/images/luxury2.jpeg'],
+    description:
+      'Couple Watch ,Combining pearls with modern design, this bestseller brings timeless royalty to life.',
   },
 ];
 
