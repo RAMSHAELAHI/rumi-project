@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { FaWhatsapp } from 'react-icons/fa';
 import { Instagram, Facebook, Mail } from "lucide-react";
 import { SiTiktok } from "react-icons/si"; // ✅ TikTok logo from react-icons
 import Topbar from "@/components/Topbar"; // ✅ Added Topbar
@@ -66,6 +67,15 @@ const SocialLinks = () => {
 
           {/* Social Buttons */}
           <div className="flex flex-col gap-5">
+             <SocialButton
+  href="https://whatsapp.com/channel/0029Va8gM6k0cT7tKkfxl33Q" 
+  label="WhatsApp"
+  bgColor="bg-[#25D366]"
+  hoverColor="bg-[#1DA851]"
+  outlineColor="[#25D366]"
+  Icon={FaWhatsapp}
+  secondaryText="Join →"
+/>
             <SocialButton
               href="https://www.facebook.com/share/18uy3b7DNL/"
               label="Facebook"
@@ -74,9 +84,13 @@ const SocialLinks = () => {
               outlineColor="[#1877F2]"
               Icon={Facebook}
               secondaryText="Visit →"
-            />
+            /> 
+
+
+
+
             <SocialButton
-              href="https://www.instagram.com/be_attractive_with_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
+              href="https://www.instagram.com/attractions_by_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
               label="Instagram"
               bgColor="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
               hoverColor="opacity-90"
@@ -85,7 +99,7 @@ const SocialLinks = () => {
               secondaryText="Visit →"
             />
             <SocialButton
-              href="https://www.tiktok.com/@be.attractive.wit?_t=ZS-8xpM39ZamJA&_r=1"
+              href="https://www.instagram.com/attractions_by_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
               label="TikTok"
               bgColor="bg-black"
               hoverColor="bg-gray-800"
