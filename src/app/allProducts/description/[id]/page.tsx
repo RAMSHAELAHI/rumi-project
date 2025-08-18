@@ -17,14 +17,18 @@ import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 
 const products = [
-  { id: 1, name: "Uroosa", price: 99, originalPrice: 129, description: "Romantic blend...", images: ["/images/uroosa.jpeg"], category: "Scents" },
-  { id: 2, name: "Miss Dior 5 in 1 set", price: 110, description: "A luxurious floral...", images: ["/images/M.Dior mini2.webp"], category: "Scents" },
-  { id: 3, name: "Channel 5 in 1 Set", price: 105, description: "A fresh and light...", images: ["/images/channel 5.webp"], category: "Scents" },
-  { id: 4, name: "Floral Desire", price: 125, originalPrice: 150, description: "Sensual floral...", images: ["/images/gucci purple.webp"], category: "Scents" },
-  { id: 5, name: "Zarar", price: 120, originalPrice: 180, tag: "Gold Edition", images: ["/images/zaara..jpeg"], description: "Premium masculine...", category: "Scents" },
-  { id: 6, name: "Janan", price: 95, tag: "Gold Edition", images: ["/images/golsz..jpeg"], description: "A blend of eastern...", category: "Scents" },
-  { id: 7, name: "Exclusive", price: 135, images: ["/images/Exclusiv.webp"], description: "Signature scent...", category: "Scents" },
-  { id: 8, name: "All rounder by Shoaib Malik", price: 150, originalPrice: 170, tag: "Exclusive", images: ["/images/all rounder j..jpeg"], description: "Sporty fragrance...", category: "Scents" },
+ { id: 1, name: "Zarar Gold", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Sale", images: ["/images/zaara..jpeg"], category: "Scents" },
+{ id: 2, name: "Janan", price: 1900, originalPrice: Math.round(1900 * 1.2), tag: "Sale", images: ["/images/golsz..jpeg"], category: "Scents" },
+{ id: 3, name: "Exclusive", price: 2599, originalPrice: Math.round(2599 * 1.2), tag: "Sale", images: ["/images/exclusive.jpeg"], category: "Scents" },
+{ id: 4, name: "All rounder by Shoaib Malik", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Sale", images: ["/images/all rounder j..jpeg"], category: "Scents" },
+{ id: 5, name: "Spark", price: 2900, originalPrice: Math.round(2900 * 1.2), tag: "Sale", images: ["/images/spark.jpeg"], category: "Scents" },
+{ id: 6, name: "Uroosa", price: 2500, originalPrice: Math.round(2500 * 1.2), tag: "Premium", images: ["/images/uroosa.jpeg"], category: "Scents" },
+{ id: 7, name: "Dior", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/Miss Dior.jpeg"], category: "Scents" },
+{ id: 8, name: "Channel 5 in 1 set", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/channel set.jpg"], category: "Scents" },
+{ id: 9, name: "Gucci Flora", price: 799, originalPrice: Math.round(799 * 1.2), images: ["/images/Gucci Flora.webp"], category: "Scents" },
+{ id: 10, name:"She Pen Perfume set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/she pen.webp"], category: "Scents" },
+{ id: 11, name: "J. Pen Perfume Set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/PEN.jpeg"], category: "Scents" },
+
 
   // ✅ WATCHES
   { id: 9, name: "Rich Gold Elegant Watch", price: 149, images: ["/images/fancy 3.jpeg"], tag: "New", description: "Luxurious gold...", category: "Watches" },

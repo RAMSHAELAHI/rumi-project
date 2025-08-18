@@ -62,7 +62,7 @@ const ThankYouPage = () => {
           </svg>
         </div>
         <h1 className="text-3xl font-bold text-gray-800">Thank You for Your Order!</h1>
-        <p className="text-gray-500 mt-2">We appreciate your trust in  <a href="/contact" className="text-purple-600 font-bold hover:underline">Attractions!!!</a>. Your order has been placed successfully.</p>
+        <p className="text-gray-500 mt-2">We appreciate your trust in  <a href="/" className="text-purple-600 font-bold hover:underline">Attractions!!!</a>. Your order has been placed successfully.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -86,12 +86,12 @@ const ThankYouPage = () => {
             {checkoutData.items.map((item, index) => (
               <div key={index} className="flex justify-between text-gray-600">
                 <span>{item.title} × {item.quantity}</span>
-                <span>${(item.price * item.quantity).toFixed(2)}</span>
+                <span>PKR{(item.price * item.quantity).toFixed(2)}</span>
               </div>
             ))}
             <div className="border-t border-gray-200 pt-3 text-gray-700 font-medium flex justify-between">
               <span>Total:</span>
-              <span>${checkoutData.total}</span>
+              <span>PKR{checkoutData.total}</span>
             </div>
             <div className="flex justify-between text-gray-600">
               <span>Payment Method:</span>

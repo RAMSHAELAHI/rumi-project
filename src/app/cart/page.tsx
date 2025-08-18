@@ -37,7 +37,7 @@ const CartPage = () => {
               </div>
               <div className="flex-grow">
                 <h3 className="font-semibold">{item.title}</h3>
-                <p className="text-gray-600">${item.price}</p>
+                <p className="text-gray-600">PKR{item.price}</p>
                 <div className="flex items-center mt-2">
                   <label htmlFor={`quantity-${item._id}`} className="mr-2 text-sm">Qty:</label>
                   <input
@@ -68,7 +68,7 @@ const CartPage = () => {
           <div className="mt-6 border-t pt-4">
             <div className="flex justify-between font-semibold text-lg">
               <span>Total</span>
-              <span>${cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}</span>
+              <span>PKR{cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}</span>
             </div>
             <Link href="/checkout"> {/* Link to your checkout page */}
               <button className="mt-4 bg-teal-500 text-white px-4 py-2 rounded-md shadow hover:bg-teal-600 transition w-full">

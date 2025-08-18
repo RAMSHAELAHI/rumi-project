@@ -1,10 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {
-  FaInstagram,
-  FaFacebookF,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaWhatsapp } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
 
@@ -28,7 +24,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-gray-500">
-              Discover timeless scents, elegant watches, and luxurious bags, stoles & scarves designed to make every moment special.
+              Discover timeless scents, elegant watches, and luxurious bags,
+              stoles & scarves designed to make every moment special.
             </p>
 
             {/* Social Media Icons */}
@@ -50,7 +47,7 @@ export default function Footer() {
                 <FaFacebookF />
               </a>
               <a
-                href="https://www.instagram.com/be_attractive_with_rumi"
+                href="https://www.instagram.com/attractions_by_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pink-500 hover:text-pink-700 text-2xl"
@@ -150,7 +147,7 @@ export default function Footer() {
                 <a
                   href="#"
                   className="hover:text-[#029FAE] hover:underline hover:underline-offset-4"
-                > Attractions By Rumi.
+                >
                   Shipping
                 </a>
               </li>

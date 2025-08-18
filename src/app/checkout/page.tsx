@@ -288,7 +288,7 @@ export default function CheckoutPage() {
                     <div>
                       <h3 className="font-semibold text-gray-700">{item.title}</h3>
                       <p className="text-sm text-gray-500">
-                        ${item.price} × {item.quantity}
+                        PKR{item.price} × {item.quantity}
                       </p>
                     </div>
                   </div>
@@ -297,19 +297,19 @@ export default function CheckoutPage() {
               <div className="mt-8 space-y-2 border-t pt-4 text-base">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>PKR{subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Discount (25%)</span>
-                  <span className="text-green-600">-${discount.toFixed(2)}</span>
+                  <span className="text-green-600">-PKR{discount.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Tax (10%)</span>
-                  <span className="text-red-600">+${tax.toFixed(2)}</span>
+                  <span className="text-red-600">+PKR{tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between font-bold border-t pt-3 text-lg">
                   <span>Total</span>
-                  <span>${total}</span>
+                  <span>PKR{total}</span>
                 </div>
               </div>
               <button

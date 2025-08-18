@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from "react-icons/fa";
 import { Instagram, Facebook, Mail } from "lucide-react";
 import { SiTiktok } from "react-icons/si"; // ✅ TikTok logo from react-icons
 import Topbar from "@/components/Topbar"; // ✅ Added Topbar
@@ -67,15 +67,15 @@ const SocialLinks = () => {
 
           {/* Social Buttons */}
           <div className="flex flex-col gap-5">
-             <SocialButton
-  href="https://whatsapp.com/channel/0029Va8gM6k0cT7tKkfxl33Q" 
-  label="WhatsApp"
-  bgColor="bg-[#25D366]"
-  hoverColor="bg-[#1DA851]"
-  outlineColor="[#25D366]"
-  Icon={FaWhatsapp}
-  secondaryText="Join →"
-/>
+            <SocialButton
+              href="https://whatsapp.com/channel/0029Va8gM6k0cT7tKkfxl33Q"
+              label="WhatsApp"
+              bgColor="bg-[#25D366]"
+              hoverColor="bg-[#1DA851]"
+              outlineColor="[#25D366]"
+              Icon={FaWhatsapp}
+              secondaryText="Join →"
+            />
             <SocialButton
               href="https://www.facebook.com/share/18uy3b7DNL/"
               label="Facebook"
@@ -84,11 +84,7 @@ const SocialLinks = () => {
               outlineColor="[#1877F2]"
               Icon={Facebook}
               secondaryText="Visit →"
-            /> 
-
-
-
-
+            />
             <SocialButton
               href="https://www.instagram.com/attractions_by_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
               label="Instagram"
@@ -99,12 +95,12 @@ const SocialLinks = () => {
               secondaryText="Visit →"
             />
             <SocialButton
-              href="https://www.instagram.com/attractions_by_rumi?igsh=MWZ0end6d2gxc2Ztcg=="
+              href="https://www.tiktok.com/@be.attractive.wit?_t=ZS-8xpM39ZamJA&_r=1"
               label="TikTok"
               bgColor="bg-black"
               hoverColor="bg-gray-800"
               outlineColor="black"
-              Icon={SiTiktok} // ✅ Using react-icons TikTok
+              Icon={SiTiktok}
               secondaryText="Visit →"
             />
             <SocialButton
@@ -142,7 +138,7 @@ const SocialLinks = () => {
               aria-label="TikTok"
               className="text-black hover:scale-110 transition"
             >
-              <SiTiktok className="w-6 h-6" /> {/* ✅ Using react-icons TikTok */}
+              <SiTiktok className="w-6 h-6" />
             </Link>
             <Link
               href="mailto:beattractivewithrumi@gmail.com"

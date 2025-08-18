@@ -13,22 +13,46 @@ const coupleProducts = [
     id: 3,
     name: 'Classic Silver Dial',
     price: 1999,
-    image: '/images/wt.jpeg',
+    images: ['/images/wt.jpeg'],
     tag: '1 Piece',
   },
   {
     id: 4,
     name: 'Fancy Neavy Blue Watch',
     price: 1999,
-    image: '/images/fancy 2.jpeg',
+    images: ['/images/fancy 2.jpeg'],
     tag: '1 Piece',
   },
   {
     id: 1,
     name: 'Rich Gold Elegant Watch',
     price: 1999,
-    image: '/images/fancy 3.jpeg',
+    images: ['/images/fancy 3.jpeg'],
     tag: '1 Piece',
+  },
+  {
+    id: 7,
+    name: 'Platinum Luxe',
+    price: 1999,
+    images: ['/images/luxury4.jpeg', '/images/luxury6.jpeg'],
+    description:
+      'Couple Watch , A limited-edition platinum watch with a minimalist yet high-class presence.',
+  },
+  {
+    id: 8,
+    name: 'Emerald Elegance',
+    price: 1399,
+    images: ['/images/luxury5.jpeg', '/images/luxury3.jpeg'],
+    description:
+      'Couple Watch, Featuring emerald stones and a slim band — grace meets green brilliance.',
+  },
+  {
+    id: 9,
+    name: 'Royal Pearl',
+    price: 1899,
+    images: ['/images/luxury6.jpeg', '/images/luxury2.jpeg'],
+    description:
+      'Couple Watch ,Combining pearls with modern design, this bestseller brings timeless royalty to life.',
   },
 ];
 
@@ -39,13 +63,18 @@ const CoupleWatchesPage = () => {
     <div className="bg-white min-h-screen">
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Heading */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Couple Watches</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Couple Watches
+          </h1>
           <p className="text-lg text-gray-600">
-            Perfectly paired designs for you and your loved one. Timeless elegance for two.
+            Perfectly paired designs for you and your loved one. Timeless
+            elegance for two.
           </p>
         </div>
 
+        {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {coupleProducts.map((product) => (
             <div
@@ -55,7 +84,7 @@ const CoupleWatchesPage = () => {
               <Link href={`/watchiesmen/couple/${product.id}`}>
                 <div className="relative cursor-pointer">
                   <Image
-                    src={product.image}
+                    src={product.images[0]} // ✅ first image
                     alt={product.name}
                     width={400}
                     height={300}
@@ -70,7 +99,9 @@ const CoupleWatchesPage = () => {
               </Link>
 
               <div className="p-4 text-center">
-                <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+                <h3 className="text-lg font-semibold text-gray-800">
+                  {product.name}
+                </h3>
                 <p className="text-pink-600 font-bold text-lg mt-1">
                   ₨ {product.price.toLocaleString('ur-PK')}
                 </p>
@@ -80,7 +111,7 @@ const CoupleWatchesPage = () => {
                       _id: product.id.toString(),
                       title: product.name,
                       price: product.price,
-                      imgUrl: product.image,
+                      imgUrl: product.images[0], // ✅ first image for cart
                       quantity: 1,
                     });
                     toast.success('Added to cart ❤️');

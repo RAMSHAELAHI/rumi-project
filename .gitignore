@@ -27,9 +27,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+<<<<<<< HEAD
 # Environment files (secrets)
 .env
 .env.local
+=======
+
+>>>>>>> 41fe0a22c3163578464db5e1cfa29279d96bb265
 
 # Logs
 *.log

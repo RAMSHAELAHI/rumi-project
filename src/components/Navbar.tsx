@@ -33,13 +33,35 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 ml-3 items-center">
-          <Link href="/" className="text-[#007580] text-[14px] font-medium">Home</Link>
-          <Link href="/allProducts" className="text-[14px] font-medium">All Products</Link>
+          <Link href="/" className="text-[#007580] text-[14px] font-medium">
+            Home
+          </Link>
+          <Link href="/allProducts" className="text-[14px] font-medium">
+            All Products
+          </Link>
 
           {[
-            { key: "scents", label: "Scents", links: [{ href: "/women", label: "Women" }, { href: "/men", label: "Men" }] },
-            { key: "watch", label: "Watches", links: [{ href: "/watchieswomen", label: "Women" }, { href: "/watchiesmen", label: "Men" }] },
-            { key: "bags", label: "Bags", links: [{ href: "/bagswomen", label: "Women" }] }
+            {
+              key: "scents",
+              label: "Scents",
+              links: [
+                { href: "/women", label: "Women" },
+                { href: "/men", label: "Men" },
+              ],
+            },
+            {
+              key: "watch",
+              label: "Watches",
+              links: [
+                { href: "/watchieswomen", label: "Women" },
+                { href: "/watchiesmen", label: "Men" },
+              ],
+            },
+            {
+              key: "bags",
+              label: "Bags",
+              links: [{ href: "/bagswomen", label: "Women" }],
+            },
           ].map((cat) => (
             <div className="relative" key={cat.key}>
               <button
@@ -57,7 +79,11 @@ const Navbar = () => {
                 }`}
               >
                 {cat.links.map((link) => (
-                  <Link key={link.href} href={link.href} className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
+                  >
                     {link.label}
                   </Link>
                 ))}
@@ -65,21 +91,26 @@ const Navbar = () => {
             </div>
           ))}
 
-          <Link href="/scarf" className="text-[14px] font-medium">Scarf</Link>
-          <Link href="/pages" className="text-[14px] font-medium">Pages</Link>
-          <Link href="/about" className="text-[14px] font-medium">About</Link>
+          <Link href="/scarf" className="text-[14px] font-medium">
+            Scarf
+          </Link>
+          <Link href="/pages" className="text-[14px] font-medium">
+            Pages
+          </Link>
+          <Link href="/about" className="text-[14px] font-medium">
+            About
+          </Link>
 
           {/* WhatsApp */}
-         <Link
-  href="https://wa.me/923238277117"  
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 text-[#272343] text-[14px] font-medium hover:text-[#25D366]"
->
-  <FaWhatsapp className="text-[#25D366] w-5 h-5" />
-  <span>Chat with Us on WhatsApp</span>
-</Link>
-
+          <Link
+            href="https://wa.me/923238277117"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[#272343] text-[14px] font-medium hover:text-[#25D366]"
+          >
+            <FaWhatsapp className="text-[#25D366] w-5 h-5" />
+            <span>Chat with Us on WhatsApp</span>
+          </Link>
         </div>
 
         {/* Mobile Hamburger */}
@@ -96,7 +127,11 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+                d={
+                  isMenuOpen
+                    ? "M6 18L18 6M6 6l12 12"
+                    : "M4 6h16M4 12h16M4 18h16"
+                }
               />
             </svg>
           </button>
@@ -106,14 +141,42 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden flex flex-col gap-2 mt-4 px-4 pb-4 border-t border-gray-200">
-          <Link href="/" className="text-[#007580] text-[14px] font-medium py-2">Home</Link>
-          <Link href="/allProducts" className="text-[14px] font-medium py-2">All Products</Link>
+          <Link
+            href="/"
+            className="text-[#007580] text-[14px] font-medium py-2"
+          >
+            Home
+          </Link>
+          <Link
+            href="/allProducts"
+            className="text-[14px] font-medium py-2"
+          >
+            All Products
+          </Link>
 
           {/* Mobile Dropdowns */}
           {[
-            { key: "scents", label: "Scents", links: [{ href: "/women", label: "Women" }, { href: "/men", label: "Men" }] },
-            { key: "watch", label: "Watches", links: [{ href: "/watchieswomen", label: "Women" }, { href: "/watchiesmen", label: "Men" }] },
-            { key: "bags", label: "Bags", links: [{ href: "/bagswomen", label: "Women" }] }
+            {
+              key: "scents",
+              label: "Scents",
+              links: [
+                { href: "/women", label: "Women" },
+                { href: "/men", label: "Men" },
+              ],
+            },
+            {
+              key: "watch",
+              label: "Watches",
+              links: [
+                { href: "/watchieswomen", label: "Women" },
+                { href: "/watchiesmen", label: "Men" },
+              ],
+            },
+            {
+              key: "bags",
+              label: "Bags",
+              links: [{ href: "/bagswomen", label: "Women" }],
+            },
           ].map((cat) => (
             <div key={cat.key}>
               <button
@@ -133,7 +196,11 @@ const Navbar = () => {
                 }`}
               >
                 {cat.links.map((link) => (
-                  <Link key={link.href} href={link.href} className="block py-2 text-gray-700">
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block py-2 text-gray-700"
+                  >
                     {link.label}
                   </Link>
                 ))}
@@ -141,21 +208,26 @@ const Navbar = () => {
             </div>
           ))}
 
-          <Link href="/scarf" className="text-[14px] font-medium py-2">Scarf</Link>
-          <Link href="/pages" className="text-[14px] font-medium py-2">Pages</Link>
-          <Link href="/about" className="text-[14px] font-medium py-2">About</Link>
+          <Link href="/scarf" className="text-[14px] font-medium py-2">
+            Scarf
+          </Link>
+          <Link href="/pages" className="text-[14px] font-medium py-2">
+            Pages
+          </Link>
+          <Link href="/about" className="text-[14px] font-medium py-2">
+            About
+          </Link>
 
           {/* WhatsApp Mobile */}
-        <Link
-  href="https://wa.me/923238277117" 
-  target="_blank"
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 text-[#272343] text-[14px] font-medium hover:text-[#25D366]"
->
-  <FaWhatsapp className="text-[#25D366] w-5 h-5" />
-  <span>Chat on WhatsApp</span>
-</Link>
-
+          <Link
+            href="https://wa.me/923238277117"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[#272343] text-[14px] font-medium hover:text-[#25D366]"
+          >
+            <FaWhatsapp className="text-[#25D366] w-5 h-5" />
+            <span>Chat with Us on WhatsApp</span>
+          </Link>
         </div>
       )}
     </nav>
