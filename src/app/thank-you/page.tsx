@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link"; // ✅ Import Link
 
 interface CartItem {
   title: string;
@@ -46,7 +47,9 @@ const ThankYouPage = () => {
     return (
       <div className="max-w-xl mx-auto p-8 mt-12 text-center bg-white shadow-xl rounded-xl">
         <h1 className="text-3xl font-bold text-gray-800">No order data found</h1>
-        <p className="text-gray-600 mt-2">You may have reached this page directly without placing an order.</p>
+        <p className="text-gray-600 mt-2">
+          You may have reached this page directly without placing an order.
+        </p>
       </div>
     );
   }
@@ -55,14 +58,24 @@ const ThankYouPage = () => {
     <div className="max-w-3xl mx-auto mt-16 p-8 bg-gradient-to-br from-gray-50 to-white shadow-lg rounded-3xl border border-gray-200">
       <div className="text-center mb-10">
         <div className="inline-flex items-center justify-center w-20 h-20 mb-4 bg-emerald-100 rounded-full shadow-md">
-          <svg className="w-10 h-10 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="1.5"
-            viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round"
-              d="M4.5 12.75l6 6 9-13.5" />
+          <svg
+            className="w-10 h-10 text-emerald-500"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
           </svg>
         </div>
         <h1 className="text-3xl font-bold text-gray-800">Thank You for Your Order!</h1>
-        <p className="text-gray-500 mt-2">We appreciate your trust in  <a href="/" className="text-purple-600 font-bold hover:underline">Attractions!!!</a>. Your order has been placed successfully.</p>
+        <p className="text-gray-500 mt-2">
+          We appreciate your trust in{" "}
+          <Link href="/" className="text-purple-600 font-bold hover:underline">
+            Attractions!!!
+          </Link>
+          . Your order has been placed successfully.
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -103,7 +116,12 @@ const ThankYouPage = () => {
 
       <div className="mt-10 border-t pt-6 text-center text-sm text-gray-500">
         <p>We’ll send a confirmation email shortly with your order details.</p>
-        <p className="mt-1">Need help? <a href="/contact" className="text-emerald-600 hover:underline">Contact Support</a></p>
+        <p className="mt-1">
+          Need help?{" "}
+          <Link href="/contact" className="text-emerald-600 hover:underline">
+            Contact Support
+          </Link>
+        </p>
       </div>
     </div>
   );
