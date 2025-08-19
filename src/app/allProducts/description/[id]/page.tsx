@@ -16,37 +16,60 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 
+
 const products = [
- { id: 1, name: "Zarar Gold", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Sale", images: ["/images/zaara..jpeg"], category: "Scents" },
-{ id: 2, name: "Janan", price: 1900, originalPrice: Math.round(1900 * 1.2), tag: "Sale", images: ["/images/golsz..jpeg"], category: "Scents" },
-{ id: 3, name: "Exclusive", price: 2599, originalPrice: Math.round(2599 * 1.2), tag: "Sale", images: ["/images/exclusive.jpeg"], category: "Scents" },
-{ id: 4, name: "All rounder by Shoaib Malik", price: 4999, originalPrice: Math.round(4999 * 1.2), tag: "Sale", images: ["/images/all rounder j..jpeg"], category: "Scents" },
-{ id: 5, name: "Spark", price: 2900, originalPrice: Math.round(2900 * 1.2), tag: "Sale", images: ["/images/spark.jpeg"], category: "Scents" },
-{ id: 6, name: "Uroosa", price: 2500, originalPrice: Math.round(2500 * 1.2), tag: "Premium", images: ["/images/uroosa.jpeg"], category: "Scents" },
-{ id: 7, name: "Dior", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/Miss Dior.jpeg"], category: "Scents" },
-{ id: 8, name: "Channel 5 in 1 set", price: 2499, originalPrice: Math.round(2499 * 1.2), tag: "Exclusive", images: ["/images/channel set.jpg"], category: "Scents" },
-{ id: 9, name: "Gucci Flora", price: 799, originalPrice: Math.round(799 * 1.2), images: ["/images/Gucci Flora.webp"], category: "Scents" },
-{ id: 10, name:"She Pen Perfume set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/she pen.webp"], category: "Scents" },
-{ id: 11, name: "J. Pen Perfume Set", price: 999, originalPrice: Math.round(999 * 1.2), images: ["/images/PEN.jpeg"], category: "Scents" },
+  { id: 1, name: "Zarar Gold", price: 2499, originalPrice: 2999, tag: "Sale", images: ["/images/zaara..jpeg"], category: "Scents", description: "Luxurious gold fragrance for every occasion." },
+  { id: 2, name: "Janan", price: 1900, originalPrice: 2280, tag: "Sale", images: ["/images/golsz..jpeg"], category: "Scents", description: "Refreshing floral aroma with subtle sweetness." },
+  { id: 3, name: "Exclusive", price: 2599, originalPrice: 3118, tag: "Sale", images: ["/images/exclusive.jpeg"], category: "Scents", description: "A premium scent that stands out." },
+  { id: 4, name: "All rounder by Shoaib Malik", price: 4999, originalPrice: 5998, tag: "Sale", images: ["/images/all rounder j..jpeg"], category: "Scents", description: "Versatile fragrance loved by all." },
+  { id: 5, name: "Spark", price: 2900, originalPrice: 3480, tag: "Sale", images: ["/images/spark.jpeg"], category: "Scents", description: "Ignite your senses with a sparkling scent." },
+  { id: 6, name: "Uroosa", price: 2500, originalPrice: 3000, tag: "Premium", images: ["/images/uroosa.jpeg"], category: "Scents", description: "Elegant fragrance for the modern personality." },
+  { id: 7, name: "Dior", price: 2499, originalPrice: 2998, tag: "Exclusive", images: ["/images/Miss Dior.jpeg"], category: "Scents", description: "Classic Dior perfume with timeless elegance." },
+  { id: 8, name: "Channel 5 in 1 set", price: 2499, originalPrice: 2998, tag: "Exclusive", images: ["/images/channel set.jpg"], category: "Scents", description: "Five iconic fragrances in one set." },
+  { id: 9, name: "Gucci Flora", price: 799, originalPrice: 959, images: ["/images/Gucci Flora.webp"], category: "Scents", description: "Floral and fresh scent for daily wear." },
+  { id: 10, name: "She Pen Perfume set", price: 999, originalPrice: 1199, images: ["/images/she pen.webp"], category: "Scents", description: "Compact perfume set for on-the-go elegance." },
+  { id: 11, name: "J. Pen Perfume Set", price: 999, originalPrice: 1199, images: ["/images/PEN.jpeg"], category: "Scents", description: "Set of fine fragrances with unique notes." },
 
+  // WATCHES
+  { id: 12, name: "Rich Gold Elegant Watch", price: 1999, images: ["/images/fancy 3.jpeg"], tag: "1 Piece", category: "Watches", description: "Gold-toned watch with elegant design." },
+  { id: 13, name: "Black Aura", price: 1999, images: ["/images/6 aura.jpeg"], tag: "Limited", category: "Watches", description: "Sleek black watch with premium finish." },
+  { id: 14, name: "Classic Silver Dial", price: 1999, images: ["/images/wt.jpeg"], tag: "1 Piece", category: "Watches", description: "Timeless silver dial watch." },
+  { id: 15, name: "Fancy Neavy Blue Watch", price: 1999, images: ["/images/fancy 2.jpeg"], tag: "1 Piece", category: "Watches", description: "Bold navy blue watch with charm." },
+  { id: 16, name: "Fancy Rose Copper", price: 1999, images: ["/images/w5.jpeg"], tag: "Luxury", category: "Watches", description: "Rose copper watch with luxury feel." },
+  { id: 17, name: "Classic Women", price: 1499, images: ["/images/w6.jpeg"], category: "Watches", description: "Elegant watch for women." },
+  { id: 18, name: "CK Gold Black Couple", price: 2499, images: ["/images/CK Gold Black Couple.jpeg"], tag: "Classy", category: "Watches", description: "Matching couple watch set in gold and black." },
+  { id: 19, name: "CK Black Gold Couple", price: 2499, images: ["/images/CK Black Gold Couple.jpeg"], tag: "Classy", category: "Watches", description: "Stylish couple watch with black and gold accents." },
+  { id: 20, name: "CK Black Grey Couple", price: 2499, images: ["/images/CK Black Grey Couple.jpeg"], tag: "Classy", category: "Watches", description: "Trendy couple watches in black and grey." },
+  { id: 21, name: "Brown Leather", price: 2499, images: ["/images/leatherwatch.jpeg"], tag: "New", category: "Watches", description: "Classic brown leather watch." },
+  { id: 22, name: "Active Pro Watch", price: 279, images: ["/images/smartt.jpeg"], tag: "Limited", category: "Watches", description: "Affordable smart watch with modern features." },
 
-  // ✅ WATCHES
-  { id: 9, name: "Rich Gold Elegant Watch", price: 149, images: ["/images/fancy 3.jpeg"], tag: "New", description: "Luxurious gold...", category: "Watches" },
-  { id: 10, name: "Black Aura", price: 149, images: ["/images/6 aura.jpeg"], tag: "New", description: "Bold black watch...", category: "Watches" },
-  { id: 11, name: "Classic Silver Dial", price: 129, images: ["/images/wt.jpeg"], description: "Refined silver dial...", category: "Watches" },
-  { id: 12, name: "Fancy Neavy Blue Watch", price: 299, images: ["/images/fancy 2.jpeg"], tag: "Luxury", description: "Luxury navy blue...", category: "Watches" },
-  { id: 13, name: "Minimal Leather Strap", price: 109, images: ["/images/w5.jpeg"], description: "Minimalist design...", category: "Watches" },
+  // BAGS
+  { id: 23, name: "Elegant Tote Bag", price: 2200, originalPrice: 3000, tag: "New", images: ["/images/full moon.jpeg"], category: "Bags", description: "Spacious tote bag with elegant design." },
+  { id: 24, name: "Fancy Clutch", price: 1599, originalPrice: 2200, tag: "Sale", images: ["/images/black bride.jpeg"], category: "Bags", description: "Chic clutch perfect for parties." },
+  { id: 25, name: "Hijab Tote", price: 1799, originalPrice: 2800, tag: "New", images: ["/images/hijab tote.jpeg"], category: "Bags", description: "Stylish tote for hijab accessories." },
+  { id: 26, name: "LV Leather Bag", price: 2199, originalPrice: 2700, tag: "Sale", images: ["/images/lv blac 2.jpeg"], category: "Bags", description: "Premium LV leather handbag." },
+  { id: 27, name: "Canva Design Tote", price: 1799, originalPrice: 2400, tag: "New", images: ["/images/CANVA.jpeg"], category: "Bags", description: "Trendy tote with creative design." },
+  { id: 28, name: "Mini Hijab Tote", price: 1399, originalPrice: 1800, tag: "New", images: [
+      "/images/mini hijab peach.jpeg",
+      "/images/mini hijab neavy blue.jpeg",
+      "/images/mini hijab cream.jpeg",
+      "/images/mini hijab grey.jpeg",
+      "/images/mini hijab black.jpeg",
+      "/images/mini hijab orange.jpeg"
+    ], category: "Bags", description: "Mini tote available in multiple colors." },
+  { id: 29, name: "Fancy Gold Clutch", price: 1599, originalPrice: 2000, tag: "Sale", images: ["/images/ride gold.jpeg"], category: "Bags", description: "Elegant gold clutch for special occasions." },
+  { id: 30, name: "Luna Carry", price: 2999, originalPrice: 3400, tag: "Sale", images: ["/images/Luna carry brown solid.jpeg"], category: "Bags", description: "Durable carry bag with premium finish." },
+  { id: 31, name: "LV Leather Bag", price: 2199, originalPrice: 2700, tag: "Sale", images: ["/images/lv black off white.jpeg"], category: "Bags", description: "Luxury LV leather bag." },
+  { id: 32, name: "Party Wear Clutch", price: 1499, originalPrice: 2700, tag: "Sale", images: ["/images/fancy grey.jpeg"], category: "Bags", description: "Perfect clutch for party wear." },
 
-  // ✅ BAGS
-  { id: 14, name: "Elegant Tote Bag", price: 199, tag: "New", images: ["/images/full moon.jpeg"], description: "Spacious and stylish...", category: "Bags" },
-  { id: 15, name: "Fancy Clutch", price: 179, images: ["/images/black bride.jpeg"], description: "Evening clutch...", category: "Bags" },
-
-  // ✅ STOLES
-  { id: 16, name: "Chiffon Plain Scarfs", price: 1200, originalPrice: 1500, tag: "Pastels", images: ["/images/3 stols.jpeg"], description: "Soft pastel chiffon...", category: "Stoles" },
-  { id: 17, name: "Georgitt Plain Scarfs", price: 1800, tag: "6 Pieces Deal", images: ["/images/bundle.jpeg"], description: "Set of 6 plain...", category: "Stoles" },
-  { id: 18, name: "Silk Stuff Scarf", price: 950, images: ["/images/silk1.webp"], description: "Smooth and elegant...", category: "Stoles" },
-  { id: 19, name: "Cotton Stuff Scarfs", price: 1350, originalPrice: 1600, images: ["/images/cotton hijab.webp"], description: "Breathable cotton...", category: "Stoles" },
+  // STOLES
+  { id: 33, name: "Chiffon Plain Scarfs", price: 1200, originalPrice: 1500, tag: "Pastels", images: ["/images/3 stols.jpeg"], category: "Stoles", description: "Soft chiffon scarves in pastel shades." },
+  { id: 34, name: "Georgitt Plain Scarfs", price: 1800, tag: "6 Pieces Deal", images: ["/images/bundle.jpeg"], category: "Stoles", description: "Bundle of 6 stylish scarves." },
+  { id: 35, name: "Silk Stuff Scarf", price: 950, images: ["/images/silk1.webp"], category: "Stoles", description: "Premium silk scarf with smooth texture." },
+  { id: 36, name: "Cotton Stuff Scarfs", price: 1350, originalPrice: 1600, images: ["/images/cotton hijab.webp"], category: "Stoles", description: "Comfortable cotton scarves for daily use." },
 ];
+
+
 
 const ProductDetail = () => {
   const { id } = useParams();

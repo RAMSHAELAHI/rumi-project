@@ -24,7 +24,7 @@ const WomenBagsPage = () => {
     {
       id: 2,
       name: 'Fancy Clutch',
-      price: 1699,
+      price: 1599,
       tag: 'Sale',
       originalPrice: 2200,
       image: '/images/black bride.jpeg',
@@ -32,7 +32,7 @@ const WomenBagsPage = () => {
     {
       id: 3,
       name: 'Hijab Tote',
-      price: 1800,
+      price: 1799,
       tag: 'New',
       originalPrice: 2800,
       image: '/images/hijab tote.jpeg',
@@ -48,13 +48,21 @@ const WomenBagsPage = () => {
     {
       id: 5,
       name: 'Canva Design Tote',
-      price: 1800,
+      price: 1799,
       tag: 'New',
       originalPrice: 2400,
       image: '/images/CANVA.jpeg',
     },
-    {
+      {
       id: 6,
+      name: 'Mini Hijab Tote',
+      price: 1399,
+      tag: 'New',
+      originalPrice: 1800,
+      image: '/images/mini hijab peach.jpeg', 
+    },
+    {
+      id: 7,
       name: 'Fancy Gold Clutch',
       price: 1599,
       tag: 'Sale',
@@ -62,20 +70,28 @@ const WomenBagsPage = () => {
       image: '/images/ride gold.jpeg',
     },
     {
-      id: 7,
+      id: 8,
       name: 'Luna Carry',
       price: 2999,
       tag: 'Sale',
       originalPrice: 3400,
-      image: '/images/LUNA CARRY BROWN.jpeg',
+      image: '/images/Luna carry brown solid.jpeg',
     },
     {
-      id: 8,
+      id: 9,
       name: 'LV Leather Bag',
       price: 2199,
       tag: 'Sale',
       originalPrice: 2700,
       image: '/images/lv black off white.jpeg',
+    },
+       {
+      id: 10,
+      name: 'Party Wear Clutch',
+      price: 1499,
+      tag: 'Sale',
+      originalPrice: 2700,
+      image: '/images/fancy grey.jpeg',
     },
   ];
 

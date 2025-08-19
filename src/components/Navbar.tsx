@@ -109,7 +109,7 @@ const Navbar = () => {
             className="flex items-center gap-2 text-[#272343] text-[14px] font-medium hover:text-[#25D366]"
           >
             <FaWhatsapp className="text-[#25D366] w-5 h-5" />
-            <span>Chat with Us on WhatsApp</span>
+            <span>Chat on WhatsApp</span>
           </Link>
         </div>
 
@@ -226,7 +226,7 @@ const Navbar = () => {
             className="flex items-center gap-2 text-[#272343] text-[14px] font-medium hover:text-[#25D366]"
           >
             <FaWhatsapp className="text-[#25D366] w-5 h-5" />
-            <span>Chat with Us on WhatsApp</span>
+            <span>Chat on WhatsApp</span>
           </Link>
         </div>
       )}

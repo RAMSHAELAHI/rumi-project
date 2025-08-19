@@ -51,6 +51,48 @@ const luxuryWatches = [
     image: '/images/w1.jpeg',
     tag: 'Free Chain',
   },
+    {
+    id: 1,
+    name: "Rich Gold",
+    price: 2999,
+    image: "/images/5 bracelet.jpeg",
+    tag: "Free Bracelet",
+  },
+  {
+    id: 2,
+    name: 'Royal Black Dial',
+    price: 1599,
+    image: '/images/w4.jpeg',
+    tag: 'Exclusive',
+  },
+  {
+    id: 3,
+    name: 'Man in Black Aura',
+    price: 2499,
+    image: '/images/6 aura.jpeg',
+    tag: 'Limited',
+  },
+  {
+    id: 4,
+    name: 'Platinum Elegance',
+    price: 3299,
+    image: '/images/w3.jpeg',
+    tag: 'Best Seller',
+  },
+  {
+    id: 5,
+    name: 'Elegant Brown',
+    price: 3299,
+    image: '/images/4 bracelet.jpeg',
+    tag: 'Free Bracelet',
+  },
+  {
+    id: 6,
+    name: 'Platinum Black',
+    price: 2499,
+    image: '/images/w1.jpeg',
+    tag: 'Free Chain',
+  },
 ];
 
 const LuxuryCollectionPage = () => {
