@@ -37,7 +37,7 @@ const AllProducts = () => {
   { id: 19, name: "CK Black Gold Couple", price: 2499, images: ["/images/CK Black Gold Couple.jpeg"], tag: "Classy", category: "Watches" },
   { id: 20, name: "CK Black Grey Couple", price: 2499, images: ["/images/CK Black Grey Couple.jpeg"], tag: "Classy", category: "Watches" },
   { id: 21, name: "Brown Leather", price: 2499, images: ["/images/leatherwatch.jpeg"], tag: "New", category: "Watches" },
-  { id: 22, name: "Active Pro Watch", price: 279, images: ["/images/smartt.jpeg"], tag: "Limited", category: "Watches" },
+  { id: 22, name: "Active Pro Watch", price: 4499, images: ["/images/smartt.jpeg"], tag: "Limited", category: "Watches" },
 
   // BAGS
   { id: 23, name: "Elegant Tote Bag", price: 2200, originalPrice: 3000, tag: "New", images: ["/images/full moon.jpeg"], category: "Bags" },
