@@ -41,7 +41,7 @@ const products = [
   { id: 19, name: "CK Black Gold Couple", price: 2499, images: ["/images/CK Black Gold Couple.jpeg"], tag: "Classy", category: "Watches", description: "Stylish couple watch with black and gold accents." },
   { id: 20, name: "CK Black Grey Couple", price: 2499, images: ["/images/CK Black Grey Couple.jpeg"], tag: "Classy", category: "Watches", description: "Trendy couple watches in black and grey." },
   { id: 21, name: "Brown Leather", price: 2499, images: ["/images/leatherwatch.jpeg"], tag: "New", category: "Watches", description: "Classic brown leather watch." },
-  { id: 22, name: "Active Pro Watch", price: 279, images: ["/images/smartt.jpeg"], tag: "Limited", category: "Watches", description: "Affordable smart watch with modern features." },
+  { id: 22, name: "Active Pro Watch", price: 4499, images: ["/images/smartt.jpeg"], tag: "Limited", category: "Watches", description: "Affordable smart watch with modern features." },
 
   // BAGS
   { id: 23, name: "Elegant Tote Bag", price: 2200, originalPrice: 3000, tag: "New", images: ["/images/full moon.jpeg"], category: "Bags", description: "Spacious tote bag with elegant design." },
