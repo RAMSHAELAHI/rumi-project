@@ -12,7 +12,7 @@ const smartProducts = [
   {
     id: 1,
     name: 'Active Pro Watch',
-    price: 279,
+    price: 4499,
     image: '/images/smartt.jpeg',
     tag: 'Limited',
   },
