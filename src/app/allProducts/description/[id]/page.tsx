@@ -32,7 +32,7 @@ const products = [
 
   // WATCHES
   { id: 12, name: "Rich Gold Elegant Watch", price: 1999, images: ["/images/fancy 3.jpeg"], tag: "1 Piece", category: "Watches", description: "Gold-toned watch with elegant design." },
-  { id: 13, name: "Black Aura", price: 1999, images: ["/images/6 aura.jpeg"], tag: "Limited", category: "Watches", description: "Sleek black watch with premium finish." },
+  { id: 13, name: "Black Aura", price: 2499, images: ["/images/6 aura.jpeg"], tag: "Limited", category: "Watches", description: "Sleek black watch with premium finish." },
   { id: 14, name: "Classic Silver Dial", price: 1999, images: ["/images/wt.jpeg"], tag: "1 Piece", category: "Watches", description: "Timeless silver dial watch." },
   { id: 15, name: "Fancy Neavy Blue Watch", price: 1999, images: ["/images/fancy 2.jpeg"], tag: "1 Piece", category: "Watches", description: "Bold navy blue watch with charm." },
   { id: 16, name: "Fancy Rose Copper", price: 1999, images: ["/images/w5.jpeg"], tag: "Luxury", category: "Watches", description: "Rose copper watch with luxury feel." },
