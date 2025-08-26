@@ -19,7 +19,7 @@ const smartProducts = [
   {
     id: 1,
     name: 'Tech Smart Pro',
-    price: 2899,
+    price: 4499,
     images: ['/images/smartt.jpeg'],
     description:
       'Experience innovation on your wrist with Tech Smart Pro. Sleek, powerful, and built for the future.',
