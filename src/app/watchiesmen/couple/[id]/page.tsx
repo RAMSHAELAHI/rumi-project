@@ -37,27 +37,30 @@ const luxuryProducts = [
     images: ['/images/fancy 3.jpeg'],
     tag: 'Fancy',
   },
-  {
+   {
     id: 4,
-    name: 'Platinum Luxe',
-    price: 1999,
-    images: ['/images/luxury4.jpeg', '/images/luxury6.jpeg'],
+    name: 'CK Gold Black Couple',
+    price: 2499,
+    images: [ '/images/CK Gold Black Couple.jpeg'],
+     tag: 'Classy',
     description:
       'Couple Watch , A limited-edition platinum watch with a minimalist yet high-class presence.',
   },
   {
     id: 5,
-    name: 'Emerald Elegance',
-    price: 1399,
-    images: ['/images/luxury5.jpeg', '/images/luxury3.jpeg'],
+    name: 'CK Black Gold Couple',
+    price: 2499,
+    images: ['/images/CK Black Gold Couple.jpeg'],
+      tag: 'Classy',
     description:
       'Couple Watch, Featuring emerald stones and a slim band — grace meets green brilliance.',
   },
   {
     id: 6,
-    name: 'Royal Pearl',
-    price: 1899,
-    images: ['/images/luxury6.jpeg', '/images/luxury2.jpeg'],
+    name: 'CK Black Grey Couple',
+    price: 2499,
+    images: ['/images/CK Black Grey Couple.jpeg'],
+      tag: 'Classy',
     description:
       'Couple Watch ,Combining pearls with modern design, this bestseller brings timeless royalty to life.',
   },
