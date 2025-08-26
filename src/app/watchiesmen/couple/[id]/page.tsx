@@ -15,20 +15,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 
-const luxuryProducts = [
+// ✅ Couple Products Array
+const coupleProducts = [
   {
     id: 1,
     name: 'Classic Silver Dial',
     price: 3499,
     images: ['/images/wt.jpeg'],
     tag: 'Fancy',
+    description: 'Elegant silver dial watch with timeless design for couples.',
   },
   {
     id: 2,
-    name: 'Fancy Neavy Blue Watch',
+    name: 'Fancy Navy Blue Watch',
     price: 3499,
     images: ['/images/fancy 2.jpeg'],
     tag: 'Fancy',
+    description: 'Stylish navy blue couple watch with luxury finish.',
   },
   {
     id: 3,
@@ -36,44 +39,46 @@ const luxuryProducts = [
     price: 3499,
     images: ['/images/fancy 3.jpeg'],
     tag: 'Fancy',
+    description: 'Couple watch with a rich golden look, perfect for formal events.',
   },
-   {
+  {
     id: 4,
     name: 'CK Gold Black Couple',
     price: 2499,
-    images: [ '/images/CK Gold Black Couple.jpeg'],
-     tag: 'Classy',
-    description:
-      'Couple Watch , A limited-edition platinum watch with a minimalist yet high-class presence.',
+    images: ['/images/CK Gold Black Couple.jpeg'],
+    tag: 'Classy',
+    description: 'Couple Watch, a limited-edition platinum watch with minimalist elegance.',
   },
   {
     id: 5,
     name: 'CK Black Gold Couple',
     price: 2499,
     images: ['/images/CK Black Gold Couple.jpeg'],
-      tag: 'Classy',
-    description:
-      'Couple Watch, Featuring emerald stones and a slim band — grace meets green brilliance.',
+    tag: 'Classy',
+    description: 'Couple Watch featuring emerald stones with a slim elegant band.',
   },
   {
     id: 6,
     name: 'CK Black Grey Couple',
     price: 2499,
     images: ['/images/CK Black Grey Couple.jpeg'],
-      tag: 'Classy',
-    description:
-      'Couple Watch ,Combining pearls with modern design, this bestseller brings timeless royalty to life.',
+    tag: 'Classy',
+    description: 'Couple Watch combining pearls with modern design for timeless royalty.',
   },
 ];
 
-const LuxuryProductDetail = () => {
+const CoupleProductDetail = () => {
   const { id } = useParams();
-  const product = luxuryProducts.find((p) => p.id.toString() === id);
+  const product = coupleProducts.find((p) => p.id.toString() === id);
   const { addToCart } = useCart();
   const [imageIndex, setImageIndex] = useState(0);
 
   if (!product) {
-    return <div className="text-center py-20 text-xl text-gray-600">Product not found</div>;
+    return (
+      <div className="text-center py-20 text-xl text-gray-600">
+        Product not found
+      </div>
+    );
   }
 
   const handleNext = () => {
@@ -90,8 +95,8 @@ const LuxuryProductDetail = () => {
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <div className="flex items-center text-sm text-gray-500 mb-6">
-          <Link href="/watchiesmen/luxury" className="hover:underline">
-            Luxury
+          <Link href="/watchiesmen/couple" className="hover:underline">
+            Couple Watches
           </Link>
           <ChevronRight size={16} className="mx-2" />
           <span>{product.name}</span>
@@ -106,7 +111,8 @@ const LuxuryProductDetail = () => {
               alt={product.name}
               width={600}
               height={600}
-              className="w-full h-[400px] object-cover rounded-lg border"
+              priority
+              className="w-full h-[400px] object-contain bg-gray-50 rounded-lg border"
             />
             {product.images.length > 1 && (
               <>
@@ -128,11 +134,18 @@ const LuxuryProductDetail = () => {
 
           {/* Product Info */}
           <div className="space-y-6">
-            <h1 className="text-3xl font-bold text-[#b38b00] font-serif">{product.name}</h1>
+            <h1 className="text-3xl font-bold text-[#b38b00] font-serif">
+              {product.name}
+            </h1>
             <div className="text-xl font-medium text-gray-900">
-              ${product.price.toFixed(2)}
+              {new Intl.NumberFormat('ur-PK', {
+                style: 'currency',
+                currency: 'PKR',
+              }).format(product.price)}
             </div>
-            <p className="text-gray-600 text-lg leading-relaxed">{product.description}</p>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              {product.description}
+            </p>
 
             <div className="flex items-center gap-4">
               <button
@@ -144,7 +157,7 @@ const LuxuryProductDetail = () => {
                     imgUrl: product.images[0],
                     quantity: 1,
                   });
-                  toast.success('Added to cart ✨');
+                  toast.success('Added to cart ❤️');
                 }}
                 className="inline-flex items-center justify-center gap-2 bg-[#b38b00] text-white px-6 py-3 rounded-full hover:bg-yellow-800 transition text-sm"
               >
@@ -167,4 +180,4 @@ const LuxuryProductDetail = () => {
   );
 };
 
-export default LuxuryProductDetail;
+export default CoupleProductDetail;
