@@ -18,27 +18,24 @@ import Navbar from '@/components/Navbar';
 const luxuryProducts = [
   {
     id: 1,
-    name: 'Diamond Royale Watch',
-    price: 999,
-    images: ['/images/luxury1.jpeg', '/images/luxury2.jpeg'],
-    description:
-      'Couple watch , A dazzling timepiece adorned with fine diamonds and crafted with precision. Pure elegance on your wrist.',
+    name: 'Classic Silver Dial',
+    price: 3499,
+    images: ['/images/wt.jpeg'],
+    tag: 'Fancy',
   },
   {
     id: 2,
-    name: 'Elite Sapphire',
-    price: 1299,
-    images: ['/images/luxury2.jpeg', '/images/luxury1.jpeg'],
-    description:
-      'Couple Watch ,Radiating luxury, this watch features a deep sapphire dial and a sleek, refined profile.',
+    name: 'Fancy Neavy Blue Watch',
+    price: 3499,
+    images: ['/images/fancy 2.jpeg'],
+    tag: 'Fancy',
   },
   {
     id: 3,
-    name: 'Golden Prestige',
-    price: 1499,
-    images: ['/images/luxury3.jpeg', '/images/luxury5.jpeg'],
-    description:
-      'Couple Watch ,With its bold golden body, this prestige piece is designed for those who love attention.',
+    name: 'Rich Gold Elegant Watch',
+    price: 3499,
+    images: ['/images/fancy 3.jpeg'],
+    tag: 'Fancy',
   },
   {
     id: 4,
