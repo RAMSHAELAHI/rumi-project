@@ -28,7 +28,7 @@ const products = [
   { id: 8, name: "Channel 5 in 1 set", price: 2499, originalPrice: 2998, tag: "Exclusive", images: ["/images/channel set.jpg"], category: "Scents", description: "Five iconic fragrances in one set." },
   { id: 9, name: "Gucci Flora", price: 799, originalPrice: 959, images: ["/images/Gucci Flora.webp"], category: "Scents", description: "Floral and fresh scent for daily wear." },
   { id: 10, name: "She Pen Perfume set", price: 999, originalPrice: 1199, images: ["/images/she pen.webp"], category: "Scents", description: "Compact perfume set for on-the-go elegance." },
-  { id: 11, name: "J. Pen Perfume Set", price: 999, originalPrice: 1199, images: ["/images/PEN.jpeg"], category: "Scents", description: "Set of fine fragrances with unique notes." },
+  { id: 11, name: "J. Pen Perfume Set", price: 1299, originalPrice: 1499, images: ["/images/PEN.jpeg"], category: "Scents", description: "Set of fine fragrances with unique notes." },
 
   // WATCHES
   { id: 12, name: "Rich Gold Elegant Watch", price: 1999, images: ["/images/fancy 3.jpeg"], tag: "1 Piece", category: "Watches", description: "Gold-toned watch with elegant design." },
