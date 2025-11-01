@@ -43,7 +43,7 @@ const AllProducts = () => {
   // BAGS
   { id: 23, name: "Elegant Tote Bag", price: 2200, originalPrice: 3000, tag: "New", images: ["/images/full moon.jpeg"], category: "Bags" },
   { id: 24, name: "Fancy Clutch", price: 1599, originalPrice: 2200, tag: "Sale", images: ["/images/black bride.jpeg"], category: "Bags" },
-  { id: 25, name: "Hijab Tote", price: 1799, originalPrice: 2800, tag: "New", images: ["/images/hijab tote.jpeg"], category: "Bags" },
+  { id: 25, name: "Hijab Tote", price: 1699, originalPrice: 2800, tag: "New", images: ["/images/hijab tote.jpeg"], category: "Bags" },
   { id: 26, name: "LV Leather Bag", price: 2199, originalPrice: 2700, tag: "Sale", images: ["/images/lv blac 2.jpeg"], category: "Bags" },
   { id: 27, name: "Canva Design Tote", price: 1799, originalPrice: 2400, tag: "New", images: ["/images/CANVA.jpeg"], category: "Bags" },
   { id: 28, name: "Mini Hijab Tote", price: 1399, originalPrice: 1800, tag: "New", images: [
